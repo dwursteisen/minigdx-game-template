@@ -1,6 +1,7 @@
 package your.game.systems
 
 import com.github.dwursteisen.minigdx.Seconds
+import com.github.dwursteisen.minigdx.ecs.components.CameraComponent
 import com.github.dwursteisen.minigdx.ecs.entities.Entity
 import com.github.dwursteisen.minigdx.ecs.entities.position
 import com.github.dwursteisen.minigdx.ecs.systems.EntityQuery
@@ -40,5 +41,17 @@ class RotatingCubeSystem : System(EntityQuery.of(Cube::class)) {
 
         // Rotate the cube of 90 degrees per second.
         entity.position.addLocalRotation(y = 90f, delta = delta)
+    }
+}
+
+class CameraMove : System(EntityQuery.of(CameraComponent::class)) {
+
+    override fun update(delta: Seconds, entity: Entity) {
+        if(input.isKeyPressed(Key.ARROW_RIGHT)) {
+            entity.position.addLocalTranslation(x = 5f, delta = delta)
+        }
+        if(input.isKeyPressed(Key.ARROW_LEFT)) {
+            entity.position.addLocalTranslation(x = -5f, delta = delta)
+        }
     }
 }

@@ -23,7 +23,7 @@ jobs:
         with:
           java-version: 11
       - name: Bundle Game
-        run: ./gradlew bundle-js bundle-jar
+        run: ./gradlew bundleJs bundleJar
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
