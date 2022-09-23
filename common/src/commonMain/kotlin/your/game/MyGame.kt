@@ -24,7 +24,7 @@ class MyGame(override val gameContext: GameContext) : Game {
             val entity = entityFactory.createFromNode(node)
 
             // The node is the cube from the Blender file
-            if(node.type == ObjectType.MODEL) {
+            if (node.type == ObjectType.MODEL) {
                 // Mark this entity as being a cube
                 entity.add(Cube())
             }

@@ -7,6 +7,7 @@ import com.github.dwursteisen.minigdx.ecs.entities.position
 import com.github.dwursteisen.minigdx.ecs.systems.EntityQuery
 import com.github.dwursteisen.minigdx.ecs.systems.System
 import com.github.dwursteisen.minigdx.input.Key
+import com.github.minigdx.imgui.ImGui
 import your.game.components.Cube
 import kotlin.math.abs
 import kotlin.math.cos
@@ -39,6 +40,14 @@ class RotatingCubeSystem : System(EntityQuery.of(Cube::class)) {
             )
         }
 
+        with(ImGui) {
+            container("Cube") {
+                label("Duration: " + component.duration)
+                if(button("Rotate")) {
+                    component.duration = 2f
+                }
+            }
+        }
         // Rotate the cube of 90 degrees per second.
         entity.position.addLocalRotation(y = 90f, delta = delta)
     }
