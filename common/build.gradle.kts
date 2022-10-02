@@ -3,7 +3,7 @@ plugins {
 }
 
 minigdx {
-    version.set("LATEST-SNAPSHOT")
+    version.set("DEV-SNAPSHOT")
 }
 
 android {
