@@ -8,11 +8,10 @@ minigdx {
 
 android {
     defaultConfig {
-        minSdkVersion(13)
+        minSdk = 21
     }
 
-    compileSdkVersion(29)
-    buildToolsVersion = "29.0.3"
+    compileSdk = 29
 
     sourceSets.getByName("main") {
         manifest.srcFile("src/androidMain/AndroidManifest.xml")
