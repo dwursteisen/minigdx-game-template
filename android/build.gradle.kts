@@ -10,12 +10,10 @@ dependencies {
 // Configure Android
 android {
     defaultConfig {
-        minSdkVersion(13)
+        minSdk = 21
     }
 
-    compileSdkVersion(29)
-    buildToolsVersion = "29.0.3"
-
+    compileSdk = 31
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
